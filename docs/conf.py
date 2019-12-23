@@ -14,7 +14,6 @@
 
 import sys
 import os
-from recommonmark.parser import CommonMarkParser
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -35,8 +34,7 @@ extensions = []
 templates_path = ['_templates']
 
 # The suffix of source filenames.
-# source_suffix = '.rst'
-source_suffix = ['.rst', '.md']
+source_suffix = '.rst'
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -101,7 +99,6 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = 'default'
-# html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -259,7 +256,3 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
-
-source_parsers = {
-    '.md': CommonMarkParser,
-}
