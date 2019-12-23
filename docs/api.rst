@@ -2,9 +2,9 @@
 API
 ########
 
-|http://{one.robo app address}
-|Encoding: UTF-8
-|Data Format: JSON
+| http://{one.robo app address}
+| Encoding: UTF-8
+| Data Format: JSON
 
 POST api/v1/scenario
 ---------------
@@ -20,16 +20,16 @@ POST api/v1/scenario
     :header: "変数名", "型", "必須", "意味"
     :widths: 30, 10, 5, 30
 
-    "ScenarioID", "string", "〇", "すべてのシナリオIDはOne.Roboの設定を確認してください。"
-    "LastName", "string", "", "姓（カナ）"
-    "FirstName", "string", "", "名（カナ）"
-    "Age", "number", "", "年齢"
-    "Sex", "string", "", "コード一覧。性別参照"
-    "FileInsuranceCard", "string", "", "コード一覧。保険証提示参照"
-    "LatestInfo", "string", "", "前回治療情報。コード一覧。発話タグ参照"
-    "LatestVisit", "string", "", "前回来院日。日付フォーマット参照"
-    "NextVisit", "string", "", "次回来院日。日付フォーマット参照"
-    "RoomName", "string", "", "案内する部屋の名前"
+    "ScenarioID", "string", "〇", "シナリオID。One.Roboの設定を確認してください。"
+    "LastName", "string", "", "姓（カナ）。"
+    "FirstName", "string", "", "名（カナ）。"
+    "Age", "number", "", "年齢。"
+    "Sex", "string", "", "コード一覧。性別参照。"
+    "FileInsuranceCard", "string", "", "コード一覧。保険証提示参照。"
+    "LatestInfo", "string", "", "前回治療情報。コード一覧。発話タグ参照。"
+    "LatestVisit", "string", "", "前回来院日。日付フォーマット参照。"
+    "NextVisit", "string", "", "次回来院日。日付フォーマット参照。"
+    "RoomName", "string", "", "案内する部屋の名前。"
 
 性別
 ----
@@ -51,11 +51,11 @@ POST api/v1/scenario
     
 日付フォーマット
 ----------------
-ISO8601(UTC)です。
+ISO8601(UTC)です。現在の日本時間から9時間マイナスしてください。
 
 2019-10-11の例::
 
-    2019-10-10T15:00:00Z
+    "NextVisit": "2019-10-10T15:00:00Z"
 
 発話タグ
 --------
