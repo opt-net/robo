@@ -9,11 +9,11 @@ One.Robo API
 目次:
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :glob:
 
     overview
-    scenario
+    api
 
 
 

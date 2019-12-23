@@ -1,5 +1,5 @@
 ########
-Scenario
+API
 ########
 
 http://{one.robo address}
@@ -9,7 +9,7 @@ Data Format: JSON
 api/v1/scenario
 ---------------
 POST
-シナリオを実行します。
+シナリオを実行します。ScenarioIDを省略したり、リクエストボディに誤りがある場合は何も起きません。また、省略した項目を含む発話は無視されます。例えば、FirstNameやLastNameを省略した場合、名前を呼ぶ発話をせず、次のアクションを実行します。
 
 例::
     $ curl -X POST -H "Content-Type: application/json" -d '{"ScenarioID":"reception","FileInsuranceCard":"1","LastName":"タロウ","FirstName":"ニホン","Age":40,"Sex":"1","RoomName":"診察室","LatestInfo":"{latestinfoN}","LatestVisit":"2016-06-20T15:00:00Z"}' http://192.168.100.59/api/v1/scenario
@@ -31,10 +31,22 @@ POST
 
 性別
 ----
+.. csv-table::
+    :header: "値", "意味"
+    :widths: 10, 10
+
+    "1", "男"
+    "2", "女"
 
 保険証提示
 ----------
+.. csv-table::
+    :header: "値", "意味"
+    :widths: 10, 10
 
+    "1", "保険証提示必要"
+    "2", "保険証提示不要"
+    
 日付フォーマット
 ----------------
 ISO8601(UTC)です。
@@ -45,10 +57,5 @@ ISO8601(UTC)です。
 
 発話タグ
 --------
-設定>シナリオ>アクション>発話の置換文字列を確認してください。初期値は以下の通りです。::
-
-    latestinfo1
-    latestinfo2
-    latestinfo3
-    latestinfo4
-    latestinfoN
+設定>シナリオ>アクション>発話の置換文字列を確認してください。
+latestinfoタグは特殊でLatestInfoに設定したlatestinfo1やlatestinfoNといった値を集約します。
