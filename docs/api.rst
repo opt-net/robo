@@ -2,16 +2,18 @@
 API
 ########
 
-http://{one.robo address}
-Encoding: UTF-8
-Data Format: JSON
+|http://{one.robo app address}
+|Encoding: UTF-8
+|Data Format: JSON
 
-api/v1/scenario
+POST api/v1/scenario
 ---------------
-POST
 シナリオを実行します。ScenarioIDを省略したり、リクエストボディに誤りがある場合は何も起きません。また、省略した項目を含む発話は無視されます。例えば、FirstNameやLastNameを省略した場合、名前を呼ぶ発話をせず、次のアクションを実行します。
 
-例::
+例
+
+::
+
     $ curl -X POST -H "Content-Type: application/json" -d '{"ScenarioID":"reception","FileInsuranceCard":"1","LastName":"タロウ","FirstName":"ニホン","Age":40,"Sex":"1","RoomName":"診察室","LatestInfo":"{latestinfoN}","LatestVisit":"2016-06-20T15:00:00Z"}' http://192.168.100.59/api/v1/scenario
 
 .. csv-table::
