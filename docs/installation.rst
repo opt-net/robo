@@ -1,7 +1,5 @@
 ============
-Installation
+インストール
 ============
 
-Install the package with pip::
-
-    $ pip install read-the-docs-template
+事前にOne.Roboを受付モードに遷移できるようセットアップしてください。
